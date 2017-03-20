@@ -1,0 +1,13 @@
+/* Section with range slider ================================================ */
+  .s-slider-range {
+    .section-title {
+      @include breakpoint(large up) {
+        margin-bottom: rem-calc(81);
+      }
+    }
+    .slider-range {
+      max-width: rem-calc(1166);
+      margin: 0 auto;
+    }
+  }
+/* ========================================================================== */

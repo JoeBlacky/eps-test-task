@@ -1,0 +1,25 @@
+#{$row} {
+  display: block;
+  max-width: $mw + $indent*2;
+  margin: 0 auto;
+  padding-left: $indent;
+  padding-right: $indent;
+}
+
+%col {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+  margin-left: rem-calc(-2);
+  margin-right: rem-calc(-2);
+}
+
+.col {
+  @extend %col;
+}
+
+.col--m-2 {
+  @include breakpoint(medium up) {
+    width: 50%;
+  }
+}

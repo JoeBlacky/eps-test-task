@@ -1,0 +1,114 @@
+/* Slider =================================================================== */
+  .slider {
+    overflow: hidden;
+    @extend %reset-ul;
+    &::after {
+      content: '';
+      display: block;
+      margin: rem-calc(16) auto 0;
+      height: rem-calc(4);
+      width: rem-calc(200);
+      background: $amber;
+    }
+    .slick-center {
+      color: $amber;
+    }
+/* Slider | Text center ===================================================== */
+    &--t-center {
+      text-align: center;
+    }
+/* Slider | Slides count ==================================================== */
+    &[data-slides-count="6"] {
+      .slide {
+        @extend %col;
+        width: rem-calc(200);
+        vertical-align: top;
+      }
+    }
+/* Slider =================================================================== */
+    .slide {
+      overflow: hidden;
+      padding: 0 rem-calc(5);
+      will-change: color;
+      transition: color $normalSpeed ease;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+/* Slider | What Included =================================================== */
+  .slider-what-included {
+    margin-bottom: rem-calc(65);
+    @include breakpoint(large up) {
+      margin-left: rem-calc(-200);
+      margin-right: rem-calc(-200);
+    }
+    .custom-nav {
+      margin-top: rem-calc(8);
+    }
+    .slider-countInfo {
+      display: inline-block;
+      vertical-align: middle;
+      width: rem-calc(60);
+      font-size: rem-calc(16);
+      font-weight: 900;
+      margin-bottom: rem-calc(2);
+      letter-spacing: rem-calc(2);
+    }
+  }
+/* Custom Nav =============================================================== */
+  .custom-nav {
+    text-align: center;
+    .custom-arrow {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+/* Custom Nav | Arrow ======================================================= */
+  .custom-arrow {
+    position: relative;
+    width: rem-calc(8);
+    height: rem-calc(15);
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: rem-calc(2);
+      height: rem-calc(9);
+      top: 0;
+      left: rem-calc(3);
+      background: $primaryTextColor;
+      transform: rotate(45deg);
+      will-change: opacity;
+      transition: opacity $normalSpeed ease;
+    }
+    &::after {
+      top: auto;
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+  }
+/* Custom Nav | Arrow ======================================================= */
+  .next-arrow {
+    transform: rotate(180deg);
+  }
+/* Custom Nav | Arrow -- Hover ============================================== */
+  #{$noTouch} {
+    .custom-arrow {
+      &:hover {
+        &::before,
+        &::after {
+          opacity: .8;
+        }
+      }
+    }
+  }
+/* ========================================================================== */

@@ -1,0 +1,33 @@
+/* Sections ================================================================= */
+  .section {
+    padding-top: rem-calc(30);
+    padding-bottom: rem-calc(20);
+    background: no-repeat center center;
+    @include breakpoint(medium up) {
+      padding-top: rem-calc(60);
+    }
+    @include breakpoint(large up) {
+      padding-top: rem-calc(86);
+      padding-bottom: rem-calc(36);
+    }
+/* Section | With gray bg =================================================== */
+    &--secondary {
+      background-color: $seashell;
+    }
+/* Section | Increased vertical padding ===================================== */
+    &--wider-verticaly {
+      @include breakpoint(large up) {
+        padding-top: rem-calc(106);
+        padding-bottom: rem-calc(126);
+      }
+    }
+/* Section | With pin inage on bg =========================================== */
+    &--image-Pin {
+      background-image: url('../img/pin-bg.png');
+      background-position: bottom center;
+      @include breakpoint(medium down) {
+        background-size: cover;
+      }
+    }
+  }
+/* ========================================================================== */
